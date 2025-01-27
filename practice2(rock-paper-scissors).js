@@ -45,26 +45,26 @@ function autoPlay() {
 }
 
 document.querySelector('.js-rock-btn').addEventListener('click', () => {
-    playerGame('Rock');
+    playerGame('rock');
 });
 
 document.querySelector('.js-paper-btn').addEventListener('click', () => {
-    playerGame('Paper');
+    playerGame('paper');
 });
 
 document.querySelector('.js-scissors-btn').addEventListener('click', () => {
-    playerGame('Scissors');
+    playerGame('scissors');
 });
 
 document.body.addEventListener('keydown', (event) => {
     if (event.key === 'r' || event.key === 'R') {
-        playerGame('Rock');
+        playerGame('rock');
     }
     else if (event.key === 'p' || event.key === 'P') {
-        playerGame('Paper');
+        playerGame('paper');
     }
     else if (event.key === 's' || event.key === 'S') {
-        playerGame('Scissors');
+        playerGame('scissors');
     }
 
     else if (event.code === 'Space') {
@@ -81,36 +81,36 @@ function playerGame(playerMove) {
     let computerMove = computerMoveFunction();
 
     let result = '';
-    if (playerMove === 'Rock') {
-        if (computerMove === 'Rock') {
+    if (playerMove === 'rock') {
+        if (computerMove === 'rock') {
             result = 'Tie';
         }
-        else if (computerMove === 'Paper') {
+        else if (computerMove === 'paper') {
             result = 'You lose';
         }
-        else if (computerMove === 'Scissors') {
+        else if (computerMove === 'scissors') {
             result = 'You Win';
         }
     }
-    else if (playerMove === 'Paper') {
-        if (computerMove === 'Paper') {
+    else if (playerMove === 'paper') {
+        if (computerMove === 'paper') {
             result = 'Tie';
         }
-        else if (computerMove === 'Scissors') {
+        else if (computerMove === 'scissors') {
             result = 'You lose';
         }
-        else if (computerMove === 'Rock') {
+        else if (computerMove === 'rock') {
             result = 'You Win';
         }
     }
-    else if (playerMove === 'Scissors') {
-        if (computerMove === 'Scissors') {
+    else if (playerMove === 'scissors') {
+        if (computerMove === 'scissors') {
             result = 'Tie';
         }
-        else if (computerMove === 'Rock') {
+        else if (computerMove === 'rock') {
             result = 'You lose';
         }
-        else if (computerMove === 'Paper') {
+        else if (computerMove === 'paper') {
             result = 'You Win';
         }
     }
@@ -164,14 +164,14 @@ function computerMoveFunction() {
     const randomNumber = Math.random();
 
     if (randomNumber >= 0 && randomNumber < 1 / 3) {
-        computerMove = 'Rock';
+        computerMove = 'rock';
     }
     else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-        computerMove = 'Paper';
+        computerMove = 'paper';
     }
 
     else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-        computerMove = 'Scissors';
+        computerMove = 'scissors';
     }
 
     return computerMove;
